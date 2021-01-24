@@ -14,7 +14,7 @@ These experiments were performed on a Raspberry Pi 3 Model B Rev 1.2 running Ras
 Graphs below show the timing and resulting size for varying resolution at fixed quality factor. Error bars indicate standard deviation within the 100 image set. PIL and cv2 encoded the random images to the exact same size.
 ![time-resolution-random](./img/resolution_time_random.png)
 ![time-resolution-cells](./img/resolution_time_cell.png)
-![size-resolution-cells](./img/resolution_size_cells.png)
+![size-resolution-cells](./img/resolution_size_cell.png)
 ![size-resolution-random](./img/resolution_size_random.png)
 
 TurboJPEG appears to outperform other methods here, PIL and opencv produce images of the same size.
@@ -24,14 +24,14 @@ Encoding the same set of images (or fresh set of randomly generated images) resi
 ![time-quality-random](./img/quality_time_random.png)
 ![time-quality-cells](./img/quality_time_cell.png)
 ![size-quality-random](./img/quality_size_random.png)
-![size-quality-cells](./img/quality_time_cells.png)
+![size-quality-cells](./img/quality_time_cell.png)
 
 Assuming that the same size means approximately the same quality, performance can be compared by looking at image size vs encoding time
 ![size-time-random](./img/size_time_random.png)
-![size-time-cells](./img/size_time_cells.png)
+![size-time-cells](./img/size_time_cell.png)
 
 
-# Discussion
+## Discussion
 TurboJPEG appears to live up to its name and be the fastest option. While some of it advantage
 might be attributable to the different interpretation of quality factor by the various libraries,
 looking at the the size(time) graph indicates it is significantly faster even at the same resulting
@@ -47,7 +47,7 @@ data in the order more convenient for the library (RGB/BGR) to an encoded repres
 This does not represent every usecase and avoiding data manipulation before and/or after encoding could be more significant consideration
 than encoding performance as shown here.
 
-# Future work
+## Future work
 It is possible to use the raspberry pi GPU to do jpeg encoding, but in some early tests it was significantly slower,
 likely due to overheads, possibly due less then ideal use if the MMAL library (reusing the ImageEncoder component required
 disabling and enabling it again, other buffers were not available, the documentation on this in PiCamera is somewhat lacking).
@@ -55,10 +55,10 @@ However, even if it is were to be slightly slower, there might be some benefit t
 so that the CPU can handle other tasks. Using MJPEG and the VideoEncoder component might result in significant improvement,
 but getting this set up is far from trivial.
 
-# Conclusion
+## Conclusion
 TurboJPEG outperforms other tested libraries for JPEG encoding on the raspberry pi.
 
-# Reproducing these results
+## Reproducing these results
 jpeg\_encoding\_performance\_full.py contains all code needed to reproduce these results. Use the last 4 lines
 to switch between quality/resolution comparisons and between using random images and cell images and redirect
 the output to appropriate files.
