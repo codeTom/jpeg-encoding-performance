@@ -25,7 +25,7 @@ Encoding the same set of images (or fresh set of randomly generated images) resi
 ![time-quality-random](./img/quality_time_random.png)
 ![time-quality-cells](./img/quality_time_cell.png)
 ![size-quality-random](./img/quality_size_random.png)
-![size-quality-cells](./img/quality_time_cell.png)
+![size-quality-cells](./img/quality_size_cell.png)
 
 Assuming that the same size means approximately the same quality, performance can be compared by looking at image size vs encoding time
 ![size-time-random](./img/size_time_random.png)
