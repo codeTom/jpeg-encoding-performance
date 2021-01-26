@@ -9,7 +9,7 @@ set title "Cell images at various resolutions at quality factor = 75"
 set key left
 
 plot datfile using 0:3:6:xticlabels((sprintf("%dx%d", $1, $2))) index 0 title 'cv2' w yerrorbars,'' using 0:3:6:xticlabels((sprintf("%dx%d", $1, $2))) index 1 title 'simplejpeg' w yerrorbars, '' using 0:3:6:xticlabels((sprintf("%dx%d", $1, $2))) index 2 title 'PIL' w yerrorbars, '' using 0:3:6:xticlabels((sprintf("%dx%d", $1, $2))) index 3 title 'pyTurboJPEG' w yerrorbars
-set out "../img/resolution_time_nomax_cells.png"
+set out "../img/resolution_time_nomax_cell.png"
 set xrange [-0.3:4.3]
 rep
 
