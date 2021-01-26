@@ -12,11 +12,12 @@ These experiments were performed on a Raspberry Pi 3 Model B Rev 1.2 running Ras
 
 ### Different resolutions
 Graphs below show the timing and resulting size for varying resolution at fixed quality factor. Error bars indicate standard deviation within the 100 image set. PIL and cv2 encoded the random images to the exact same size.
-![time-resolution-random](./img/resolution_time_random.png)
-![time-resolution-cells](./img/resolution_time_cell.png)
-![size-resolution-cells](./img/resolution_size_cell.png)
-![size-resolution-random](./img/resolution_size_random.png)
+![time-resolution-random](./img/resolution_time_nomax_random.png)
+![time-resolution-cells](./img/resolution_time_nomax_cell.png)
+![size-resolution-cells](./img/resolution_size_nomax_cell.png)
+![size-resolution-random](./img/resolution_size_nomax_random.png)
 
+The maximum resolution has been excluded from these graphs to make them more readable, graphs including 3280x2464 are in img/.
 TurboJPEG appears to outperform other methods here, PIL and opencv produce images of the same size.
 
 ### Different qualities
